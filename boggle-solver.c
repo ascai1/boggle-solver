@@ -124,14 +124,9 @@ int main(int argc, char * argv[]) {
 	char err = 0;
 	struct Cell ** curr_cell = cells;
 
-	// consume a newline
-	if (fscanf(boggle_layout, "%c", &c) != 1 || c != '\n') {
-		err = 1;
-	}
-
 	for (i = 0; i < l && !err; ++i) {
 		for (j = 0; j < w; ++j) {
-			if (fscanf(boggle_layout, "%c", &c) != 1 || !(c = to_lower_case(c))) {
+			if (fscanf(boggle_layout, " %c", &c) != 1 || !(c = to_lower_case(c))) {
 				err = 1;
 				break;
 			}
