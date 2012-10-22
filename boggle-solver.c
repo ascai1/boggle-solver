@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <time.h>
 #define NUM_LETTERS 26
 
 struct Cell;
@@ -84,7 +83,6 @@ struct Cell * is_legal(char * c, struct Cell * cell) {
 }
 
 int main(int argc, char * argv[]) {
-clock_t t = clock();
 	if (argc != 3) {
 		printf("Usage: boggle_solver [boggle layout] [word list]\n");
 		return 1;
@@ -207,6 +205,5 @@ clock_t t = clock();
 		}
 	}
 
-	printf("%lf\n", (float)(clock() - t) / CLOCKS_PER_SEC);
 	return 0;
 }
